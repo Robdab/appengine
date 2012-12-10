@@ -1,0 +1,352 @@
+<!--<style type="text/css">
+
+html, body {
+  width: 100%; height: 100%;
+  margin: 0; padding: 0;
+}
+
+body {
+  background: #111 url(../images/noise.png);
+  color: #e2e2e2;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 100;
+  letter-spacing: 1px;
+  -webkit-text-size-adjust: none;
+}
+
+table, tr, td {
+  width: 100%; height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+h1 {
+  display: block; position: relative;
+  width: 360px;
+  font-size: 1.618em;
+  font-weight: 100;
+  margin: 0 auto; padding: 0;
+  margin-bottom: 1.25em; padding-bottom: 1em;
+  border-bottom: 1px solid #444;
+  letter-spacing: 5px;
+}
+p {
+  display: block; position: relative;
+  margin: 0 0 1em 0;
+}
+
+.contact {
+  display: block; position: relative;
+  width: 440px;
+  font-size: 1em;
+  color: #FFF;
+  font-weight: normal;
+  margin: 0 auto; padding: 0;
+  margin-top: 1em; padding-top: 0.5em;
+  border-top: 1px solid #444;
+}
+
+a {
+  color: #e2e2e2;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+a:hover {
+  border-bottom-color: #999;
+}
+
+@media only screen and (min-width: 640px) {
+  h1 {
+    width: 600px;
+  }
+}
+--><!--
+body{
+	background:#000;
+	color:#0f0;
+	font-family:Courier New;
+	font-size:15px;
+	margin:0;
+}
+
+td{
+	vertical-align:top;
+}
+
+.backgroundImage{
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index:0;
+	opacity:.15;
+	filter:alpha(opacity=15);
+	-moz-opacity:.15;
+}
+
+#frame{
+	border:none;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	padding:10px;
+	margin:75px;
+	margin-bottom:8px;
+	position:relative;
+}
+
+.opacityFrame{
+	background:#0f0;
+	opacity:.1;
+	filter:alpha(opacity=10);
+	-moz-opacity:.1;
+	top:0;
+	left:0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:1;
+	border-radius:10px;
+	-moz-border-radius:10px;
+}
+
+.subFrame{
+	position:relative;
+	height:100%;
+	width:100%;
+	z-index:2;
+	scrollbar-face-color:#0f0;
+	scrollbar-track-color:#020;
+	scrollbar-highlight-color:#0f0;
+	scrollbar-3dlight-color:#0f0;
+	scrollbar-arrow-color:#000;
+	scrollbar-shadow-color:#0f0;
+	scrollbar-darkshadow-color:#0f0;
+}
+
+#terminalDisplay{
+	margin-bottom:15px;
+}
+
+#contextDisplay{
+	float:left;
+	margin-top:4px;
+}
+
+#Cli{
+	width:75%;
+	background:transparent;
+	color:#0f0;
+	font-family:Courier New;
+	font-size:15px;
+	outline:none;
+	resize:none;
+	border:none;
+}
+
+code{
+	background-color:#111111;
+	color:#F1F2F3;
+	padding-left:3px;
+	padding-right:3px;
+	border-radius:10px;
+	-moz-border-radius:10px;
+}
+
+pre > code{
+	display:inline-block;
+	max-height:500px;
+	overflow:auto;
+	padding:15px;
+}
+
+img{
+	border:none;
+}
+
+#terminalDisplay img{
+	max-width:314px;
+	max-height:314px;
+}
+
+.quote{
+	border:solid 1px #0f0;
+	background:#030;
+	padding:10px;
+	display:inline-block;
+}
+
+.inverted{
+	color:#000;
+	background:#0f0;
+}
+
+.dim{
+	color:#070;
+}
+
+.italics{
+	font-style:italic;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.error{
+	color:#f00;
+}
+
+.sql{
+	border:1px solid lime;
+}
+
+.sql th{
+	border-bottom:1px solid lime;
+}
+
+.sql th,.sql td{
+	text-align:left;
+	border-left:1px solid lime;
+}
+
+.sql .noborder{
+	border-left:none;
+}
+
+a:link, a:visited, a:hover{
+	color:#0f0;
+	font-weight:bold;
+}
+
+/* Turn on a 13x13 scrollbar */
+::-webkit-scrollbar{
+	width:5px;
+	height:5px;
+}
+
+::-webkit-scrollbar-button:vertical{
+	display:none;
+}
+
+/* Turn on single button up on top, and down on bottom */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment{
+	display:none;
+}
+
+/* Turn off the down area up on top, and up area on bottom */
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement{
+	display:none;
+}
+
+/* Place The scroll down button at the bottom */
+::-webkit-scrollbar-button:vertical:increment{
+	display:none;   
+}
+
+/* Place The scroll up button at the up */
+::-webkit-scrollbar-button:vertical:decrement{
+	display:none;
+}
+
+::-webkit-scrollbar-track:vertical{
+	display:none;
+}
+
+/* Top area above thumb and below up button */
+::-webkit-scrollbar-track-piece:vertical:start{
+	
+}
+
+/* Bottom area below thumb and down button */
+::-webkit-scrollbar-track-piece:vertical:end{
+	
+}
+
+/* Track below and above */
+::-webkit-scrollbar-track-piece{
+	background-color:#020;
+}
+ 
+/* The thumb itself */
+::-webkit-scrollbar-thumb:vertical{
+	background-color:#0f0;
+	cursor:pointer;
+	min-height:5px;
+}
+
+/* The thumb itself */
+::-webkit-scrollbar-thumb:horizontal{
+	background-color:#0f0;
+	cursor:pointer;
+	min-width:5px;
+}
+ 
+/* Corner */
+::-webkit-scrollbar-corner{
+	display:none;
+}
+ 
+/* Resizer */
+::-webkit-scrollbar-resizer{
+	background-color:#0f0;
+}
+
+.hell{
+	color:black;
+}
+
+.hell .opacityFrame{	
+	background:#e62020;
+	opacity:0.8;
+}
+
+.hell #Cli{
+	color:black;
+}
+
+.hell .quote{	
+	border:solid 1px #0f0;
+	background:#030;
+}
+
+.hell .inverted{
+	color:#e62020;
+	background:black;
+}
+
+.hell .dim{
+	color:#2a2a2a;
+}
+
+.hell a:link,.hell a:visited,.hell a:hover{
+	color:black;
+}
+
+/* The thumb itself */
+.hell ::-webkit-scrollbar-thumb:vertical{
+	background-color:#e62020;
+	cursor:pointer;
+	min-height:5px;
+}
+
+/* The thumb itself */
+.hell ::-webkit-scrollbar-thumb:horizontal{
+	background-color:#e62020;
+	cursor:pointer;
+	min-width:5px;
+}
+
+/* Resizer */
+.hell ::-webkit-scrollbar-resizer{
+	background-color:#e62020;
+}
+
+/* Track below and above */
+.hell ::-webkit-scrollbar-track-piece{
+	background-color:#020;
+}-->

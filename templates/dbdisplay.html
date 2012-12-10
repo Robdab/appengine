@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>/USERS DB/</title>
+  </head>
+
+  <body>
+    <h2>/users/</h2>
+
+    <hr>
+
+    {% for user in users %}
+	<div class="users">
+	    <div>{{user.name}} | {{user.pw_hash}} | {{user.email}} | {{user.account_created}}</div>
+	</div>
+    {% endfor %}
+
+  <hr>
+  <br>
+  <input type=button value="delete"></input>
+
+  </body>
+
+</html>

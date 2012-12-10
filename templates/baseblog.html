@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+  <title>McBlog</title>
+</head>
+
+<body>
+  <a href="/blog" class="main-title">
+	<h2>Hold your Blog!</h2>
+  </a>
+
+  <div class="login-area">
+    {% if user %}
+      {{user.name}} (<a class="login-link" href="/logout">logout</a>)
+    {% else %}
+      <a class="login-link" href="/blog/login">login</a>
+      |
+      <a class="login-link" href="/blog/signup">signup</a>
+    {% endif %}
+  </div>
+
+  <hr>
+
+  <div id="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  
+  <hr>
+
+<div class='footer'>
+  <p>&copy; 2012 Robert Dabin,</p> <p>email: mangum.carver@gmail.com;</p> <p>Terms of Use;</p> 
+  <p><span class="hovertext" title="add .json to any blog url to see the json API">
+    <a href="http://www.json.org/" style="text-decoration: none">
+	this blog has a json API
+    </a>
+  </span></p>
+</div>
+
+</body>
+
+</html>
